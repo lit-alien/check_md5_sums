@@ -21,6 +21,7 @@ Installation:
     service xinetd restart
     
  Create the service in Nagios:
+ 
     define service {
         host_name                       hostname
         service_description             check_md5_sums
