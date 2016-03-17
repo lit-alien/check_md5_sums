@@ -108,7 +108,7 @@ function check_file {
 
     result=$(/usr/bin/md5sum $filename)
     if [[ -z $result ]]; then
-      nagios_exit $UNKNOWN "UNKNOWN: No /usr/bin/md5sum returned for $filename."
+      nagios_exit $UNKNOWN "UNKNOWN: No md5sum returned for $filename."
     fi
     if ! [[ $(grep $result $listfile) ]]; then
       if [[ $auto_update ]]; then
@@ -116,9 +116,9 @@ function check_file {
         update_text=" $listfile has been updated."
       fi
       nagios_exit $WARNING "WARNING: $filename does not match the \
-      existing /usr/bin/md5sum.$update_text"
+      existing md5sum.$update_text"
     else
-      nagios_exit $OK "OK: $filename matches the existing /usr/bin/md5sum."
+      nagios_exit $OK "OK: $filename matches the existing md5sum."
     fi
 }
 
