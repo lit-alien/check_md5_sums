@@ -7,17 +7,20 @@ Purpose:
   easily test against multiple groups of files, or test individual files.  
 
 List files should keep the standard format used by /usr/bin/md5sum:
-   d2c8f3221cb65200dc2a456f53c4deff  /path/to/file
-   292e15f60807284414d94c0db108e495  /path/to/other/file
+
+    d2c8f3221cb65200dc2a456f53c4deff  /path/to/file
+    292e15f60807284414d94c0db108e495  /path/to/other/file
 
 
 Installation:
  Copy check_md5_sums.sh to your plugins directory.
  
  Create the command in nrpe.cfg:
+ 
     command[check_md5_sums]=/usr/local/nagios/plugins/check_md5_sums.sh
     
   Restart nrpe services:
+  
     service xinetd restart
     
  Create the service in Nagios:
