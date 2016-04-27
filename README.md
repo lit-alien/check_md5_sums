@@ -28,7 +28,7 @@ Installation:
     define service {
         host_name                       hostname
         service_description             check_md5_sums
-        check_command                   check_nrpe_alt_port!check_md5_sums!-a '-f /path/to/file'
+        check_command                   check_nrpe!check_md5_sums!-a '-f /path/to/file'
         initial_state                   o
         max_check_attempts              1
         check_interval                  720
